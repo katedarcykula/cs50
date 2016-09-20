@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <cs50.h>
+
+//Problem Set 1: Week 1: cs50 Introduction to Programming//
+//Kate-Darcy Kula//
+//The purpose of this program is to draw a right-adjusted half pyramid according to the user's height preference//
+
+int main(void)
+
+{
+    int height;
+    //Ask the user for the preferred height of the pyramid
+    do
+    {
+        printf("How tall should the pyramid be?\n");
+        height = GetInt();
+        if (height == 0)
+        break;
+    }
+    //Build the Pyramid
+    while (height < 1 || height > 23);
+    for (int rows = 0; rows < height; rows++)
+    {
+        for (int spaces = 0; spaces < height-rows-1; spaces++)
+        {
+        printf(" ");
+        }
+        for (int hashes = 0; hashes < rows+2; hashes++)
+        {
+        printf("#");
+        }
+        printf("\n");
+    }    
+}
