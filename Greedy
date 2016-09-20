@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+
+/*Problem Set 1: Week 1 of cs50 Introduction to Programming*/
+/*Kate-Darcy Kula*/
+/*The purpose of this program is to determine the least number of coins required to return the appropriate change to the customer*/
+
+int main()
+
+{
+float original_change_owed;
+int quarters = 0;
+int dimes = 0;
+int nickels = 0;
+int pennies = 0;
+
+    //Ask client how much change is owed
+    do
+    {
+    printf("How much change is owed?\n");
+    scanf("%f", &original_change_owed);
+        if (original_change_owed < 0)
+        {
+        printf("Great! No change is owed. You are all set!\n");
+        }
+    }
+    while (original_change_owed < 0);
+    int change_owed = round (original_change_owed*100);
+    //Determine how many quarters, dimes, nickels and pennies can be used
+    if (change_owed >= 25)
+        {
+            quarters = change_owed / 25;
+            change_owed = change_owed % 25;
+        }
+    if (change_owed >= 10)
+        {
+            dimes = change_owed / 10;
+            change_owed = change_owed % 10;
+        }
+    if (change_owed >= 5)
+        {
+            nickels = change_owed / 5;
+            change_owed = change_owed % 5;
+        }
+    if (change_owed >= 1)
+        {
+            pennies = change_owed / 1;
+            change_owed = change_owed % 1;
+        }
+    //Tell client how many coins they should use
+    {
+    int coins = quarters + dimes + nickels + pennies;
+    printf("You should use %d coins!\n", coins);
+    
+    return 0;
+    }
+}
