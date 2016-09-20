@@ -1,0 +1,14 @@
+#include <cs50.h>
+#include <stdio.h>
+
+//Problem Set 1: Week 1: cs50 Introduction to Computer Science//
+//Kate-Darcy Kula//
+//The purpose of this program is to determine equivalent in water bottles of how much water is used during the user's shower//
+
+int main(void)
+{
+    printf("How many minutes, on average, do you shower for?\n");
+    int bottles, minutes = GetInt ();
+    bottles = (minutes * 12);
+    printf("You use the equivalent of %i bottles of water for your shower!\n", bottles);
+}
